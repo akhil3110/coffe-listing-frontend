@@ -1,6 +1,6 @@
 const Header = () => {
     return ( 
-        <div className=" w-full h-full mt-20">
+        <div className="w-full h-full mt-30">
             <div className="flex justify-center relative">
                 <img
                 src="./vector.svg"
