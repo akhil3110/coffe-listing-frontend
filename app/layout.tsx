@@ -25,8 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1B1D1F]`}
       >
+        <img src="./bg-cafe.jpg" alt="" className="w-full h-[250px] absolute top-0 -z-10"/>
         {children}
       </body>
     </html>
