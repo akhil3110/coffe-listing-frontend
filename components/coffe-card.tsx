@@ -19,7 +19,12 @@ const CoffeCard = ({
     price
 }: CoffeCardProps) => {
     return ( 
-        <div className="flex flex-col gap-y-2 justify-center">
+        <div className="flex flex-col gap-y-2 justify-center relative">
+            {popular && (
+                <div className="bg-[#F6C768] absolute top-3 left-3 rounded-lg text-[#302522] px-1.5 py-0.5 text-xs font-semibold">
+                    Popular
+                </div>
+            )}
             <img src={image} alt="coffe_image" className="w-[320px] h-[200px] rounded-md" />
             <div className="w-full flex justify-between">
                 <div className="flex flex-col gap-y-1">

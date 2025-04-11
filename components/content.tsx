@@ -72,9 +72,9 @@ const Content = () => {
 
     return ( 
         <div className="w-full h-full flex justify-center mt-10 mb-10">
-            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
+            <div className="grid grid-cols-3 gap-x-10 gap-y-10 mt-10">
                 {data.map((c) => (
-                    <div className="col-span-1">
+                    <div className="col-span-1 cursor-pointer">
                         <CoffeCard
                             name= {c.name}
                             rating= {c.rating}
