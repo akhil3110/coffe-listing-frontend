@@ -57,13 +57,13 @@ const Header = () => {
               </div>
               <div className="flex justify-center gap-x-4 w-full mt-2">
                 <button 
-                    className={`${productState === "all" && `bg-[#4D5562]`} px-4 py-1.5 cursor-pointer rounded-md`}
+                    className={`px-4 py-1.5 cursor-pointer rounded-md transition-colors duration-300 ease-in-out ${productState === "all" ? "bg-[#4D5562]" : "bg-transparent"}`}
                     onClick={handleAllProductsClick}
                 >
                   All Products
                 </button>
                 <button 
-                    className={`${productState === "available" && `bg-[#4D5562]`} px-4 py-1.5 cursor-pointer rounded-md`}
+                    className={`px-4 py-1.5 cursor-pointer rounded-md transition-colors duration-300 ease-in-out ${productState === "available" ? "bg-[#4D5562]" : "bg-transparent"}`}
                     onClick={handleAvailableProductsClick}
                 >
                   Available Now
