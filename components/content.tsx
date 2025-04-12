@@ -26,7 +26,7 @@ const Content = () => {
         }
         
         getData()
-    }, [])
+    }, [setData])
 
     return ( 
         <div className="max-w-7xl px-10 h-full flex justify-center mt-10 mb-10">
