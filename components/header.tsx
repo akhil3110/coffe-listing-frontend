@@ -50,7 +50,7 @@ const Header = () => {
               <div className="text-3xl font-semibold text-[#FEF7EE] text-center">
                 Our Collection
               </div>
-              <div className="text-[#6F757C] text-center max-w-xl">
+              <div className="text-[#6F757C] text-center max-w-xl text-xs md:text-base">
                 Introducing our Coffee Collection, a selection of unique coffees <br />
                 from different roast types and origins, expertly roasted in small <br />
                 batches and shipped fresh weekly.
