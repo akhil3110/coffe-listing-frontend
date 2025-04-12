@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CoffeCard from "./coffe-card";
+import useDataStore from "@/store/data-store";
 
 
 interface dataType {
@@ -18,7 +19,7 @@ interface dataType {
 
 const Content = () => {
 
-    const [data,setData] =  useState<dataType[]>([])
+    const {data,setData} = useDataStore()
 
 
     useEffect(() => {
@@ -29,37 +30,6 @@ const Content = () => {
               )
                 .then((response) => response.json())
                 .then((data) => {
-                    const a = [{
-                        "id": 6,
-                        "name": "Valentine Special",
-                        "image": "https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/valentine-special.jpg",
-                        "price": "$5.50",
-                        "rating": null,
-                        "votes": 0,
-                        "popular": false,
-                        "available": true
-                      },
-                      {
-                        "id": 5,
-                        "name": "Chocolate Coffee",
-                        "image": "https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/chocolate-coffee.jpg",
-                        "price": "$4.00",
-                        "rating": "4.65",
-                        "votes": 122,
-                        "popular": false,
-                        "available": false
-                      },
-                      {
-                        "id": 5,
-                        "name": "Chocolate Coffee",
-                        "image": "https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/chocolate-coffee.jpg",
-                        "price": "$4.00",
-                        "rating": "4.65",
-                        "votes": 122,
-                        "popular": false,
-                        "available": false
-                      }
-                    ]
                     setData(data)
                 })
                 .catch((error) => {
@@ -76,6 +46,7 @@ const Content = () => {
                 {data.map((c) => (
                     <div className="col-span-3 md:col-span-1 cursor-pointer">
                         <CoffeCard
+                            key={c.id}
                             name= {c.name}
                             rating= {c.rating}
                             popular= {c.popular}

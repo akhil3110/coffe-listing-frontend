@@ -1,4 +1,41 @@
+"use client"
+import useDataStore from "@/store/data-store";
+import { useEffect, useState } from "react";
+
 const Header = () => {
+
+    const [productState,setProductState] = useState<"all" | "available">("all")
+
+    const {data, setData} = useDataStore()
+
+    const handleAllProductsClick =async () => {
+        if(productState === "all"){
+            return
+        }
+
+        setProductState("all")
+        fetch(
+            "https://raw.githubusercontent.com/devchallenges-io/curriculum/refs/heads/main/4-frontend-libaries/challenges/group_1/data/simple-coffee-listing-data.json"
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data)
+            })
+            .catch((error) => {
+              
+            });
+
+    }
+
+    const handleAvailableProductsClick = async () => {
+        if(productState === "available"){
+            return
+        }
+        setProductState("available")
+        const availableProducts = data.filter((a) => a.available === true)
+        setData(availableProducts)
+    }
+
     return ( 
       <div className="w-full h-full">
         {/* Outer wrapper to restrict horizontal overflow only */}
@@ -19,12 +56,18 @@ const Header = () => {
                 batches and shipped fresh weekly.
               </div>
               <div className="flex justify-center gap-x-4 w-full mt-2">
-                <div className="bg-[#4D5562] px-4 py-1.5 cursor-pointer rounded-md">
+                <button 
+                    className={`${productState === "all" && `bg-[#4D5562]`} px-4 py-1.5 cursor-pointer rounded-md`}
+                    onClick={handleAllProductsClick}
+                >
                   All Products
-                </div>
-                <div className="px-4 py-1.5 cursor-pointer rounded-md">
+                </button>
+                <button 
+                    className={`${productState === "available" && `bg-[#4D5562]`} px-4 py-1.5 cursor-pointer rounded-md`}
+                    onClick={handleAvailableProductsClick}
+                >
                   Available Now
-                </div>
+                </button>
               </div>
             </div>
           </div>
