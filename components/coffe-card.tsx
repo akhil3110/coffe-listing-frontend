@@ -17,7 +17,7 @@ const CoffeCard = ({
     image,
     available,
     price
-}: CoffeCardProps) => {
+}: CoffeCardProps) => {   
     return ( 
         <div className="flex flex-col gap-y-2 justify-center relative">
             {popular && (
@@ -31,19 +31,29 @@ const CoffeCard = ({
                     <div className="font-semibold ">
                         {name}
                     </div>
-                    {rating ? 
-                        <div className="flex gap-x-0.5 text-md">
+                    <div className="flex gap-x-0.5 text-md">
+                        {rating ? 
+                        <>
                             <img src="./Star_fill.svg" alt="" />
                             {rating} ({votes} votes)
-                        </div> 
+                        </> 
                         : 
-                        <div className="flex gap-x-0.5 text-md">
+                        <>
                             <img src="./Star.svg" alt="" />
                             No Rattings
-                        </div> }
+                        </> 
+                        }
+                    </div>
                 </div>
-                <div className="bg-[#BEE3CC] text-black py-0.5 px-1.5 h-full text-sm rounded-md">
-                    {price}
+                <div className="flex flex-col gap-y-2">
+                    <div className="bg-[#BEE3CC] text-black py-0.5 px-1.5 text-center text-sm rounded-md">
+                        {price}
+                    </div>
+                    {!available && (
+                        <div  className="text-[#ED735D]">
+                            Sold Out
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
