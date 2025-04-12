@@ -1,7 +1,6 @@
 "use client"
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CoffeCard from "./coffe-card";
 import useDataStore from "@/store/data-store";
 
@@ -33,7 +32,7 @@ const Content = () => {
                     setData(data)
                 })
                 .catch((error) => {
-                  // Handle any errors here
+                  console.log(error)
                 });
         }
         
