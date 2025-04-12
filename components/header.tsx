@@ -46,7 +46,7 @@ const Header = () => {
               alt="Vector background"
               className="absolute -right-1/12 sm:left-1/2 top-12 z-10 opacity-80 pointer-events-none"
             />
-            <div className="flex flex-col gap-y-2 z-20 mt-30">
+            <div className="flex flex-col gap-y-2 z-20 mt-20">
               <div className="text-3xl font-semibold text-[#FEF7EE] text-center">
                 Our Collection
               </div>
