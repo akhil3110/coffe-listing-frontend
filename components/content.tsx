@@ -5,17 +5,6 @@ import CoffeCard from "./coffe-card";
 import useDataStore from "@/store/data-store";
 
 
-interface dataType {
-    available: boolean
-    id: number
-    image: string
-    name: string
-    popular: boolean
-    price: string
-    rating: string | null
-    votes: number
-}
-
 const Content = () => {
 
     const {data,setData} = useDataStore()

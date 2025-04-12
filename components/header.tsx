@@ -1,6 +1,6 @@
 "use client"
 import useDataStore from "@/store/data-store";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 const Header = () => {
 
@@ -22,7 +22,7 @@ const Header = () => {
                 setData(data)
             })
             .catch((error) => {
-              
+              console.log(error)
             });
 
     }
